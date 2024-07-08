@@ -58,13 +58,8 @@ function validaNome(nome: HTMLInputElement) {
       return;
     }
   
-<<<<<<< HEAD
     if(!/^[a-zA-ZãÕÂÔ\s]+$/.test(nome.value)) {
       msg = '* Caracteres especiais não são permitidos no campo nome.';
-=======
-    if(!/^[a-zA-Z]+$/.test(nome.value)) {
-      msg = '*Caracteres especiais, como espaço, ponto e virgula não são permitidos no campo nome.';
->>>>>>> 88a37156295f9b88ee7b3d4de02c4f1ae836f848
       error(msg, nome);
       return;
     }
@@ -96,13 +91,8 @@ function validaNome(nome: HTMLInputElement) {
         }
       }
 
-<<<<<<< HEAD
     if (!/(^[a-zA-ZãÕÂÔ\s]+$)|(^[a-zA-ZãÕÂÔ]\s[a-zA-ZãÕÂÔ]+$)/.test(sobrenome.value)) {
       msg = '* Caracteres especiais não são permitidos no campo sobrenome.';
-=======
-    if (!/(^[a-zA-Z\s]+$)|(^[a-zA-Z]\s[a-zA-Z]+$)/.test(sobrenome.value)) {
-      msg = '*Caracteres especiais não são permitidos no campo nome.';
->>>>>>> 88a37156295f9b88ee7b3d4de02c4f1ae836f848
       error(msg, sobrenome);
      return;
     }
