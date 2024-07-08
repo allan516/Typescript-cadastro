@@ -42,24 +42,24 @@ function validaNome(nome: HTMLInputElement) {
     isValidNome = false;
     if (nome.nextElementSibling && nome.nextElementSibling.classList.contains('error')) nome.nextElementSibling.remove();
     if(nome.value === '') {
-      msg = '*Campo nome não pode ficar em branco.';
+      msg = '* Campo nome não pode ficar em branco.';
       error(msg, nome);
       return;
     }
     if(nome.value.length > 10) {
-      msg = '*Nome precisa ter menos de 10 caracteres.';
+      msg = '* Nome precisa ter menos de 10 caracteres.';
       error(msg, nome);
       return;
     }
   
     if(nome.value.length < 3) {
-      msg = '*Nome precisa ter pelo menos de 3 caracteres.';
+      msg = '* Nome precisa ter pelo menos de 3 caracteres.';
       error(msg, nome);
       return;
     }
   
-    if(!/^[a-zA-Z]+$/.test(nome.value)) {
-      msg = '*Caracteres especiais, como espaço, ponto e virgula não são permitidos no campo nome, passar bem.';
+    if(!/^[a-zA-ZãÕÂÔ\s]+$/.test(nome.value)) {
+      msg = '* Caracteres especiais não são permitidos no campo nome.';
       error(msg, nome);
       return;
     }
@@ -72,18 +72,27 @@ function validaNome(nome: HTMLInputElement) {
     let msg: string;
     if (sobrenome.nextElementSibling && sobrenome.nextElementSibling.classList.contains('error')) sobrenome.nextElementSibling.remove();
     if (sobrenome.value === '') {
-      msg = '*Campo sobrenome não pode ficar em branco.';
+      msg = '* Campo sobrenome não pode ficar em branco.';
       error(msg, sobrenome);
      return;
-    }
-    if (sobrenome.value.length > 20) {
-      msg = '*sobrenome precisa ter menos de 10 caracteres.';
-      error(msg, sobrenome);
-     return;
-    }
+    } 
+     
+    
+      if (sobrenome.value.length > 20) {
+        let array: string[] = [];
+        for (let iterator of sobrenome.value) {
+          if(iterator === ' ') continue;
+          array.push(iterator);
+        }
+        if(array.join('').length >= 20) {
+          msg = '* sobrenome precisa ter menos de 20 caracteres.';
+          error(msg, sobrenome);
+          return;
+        }
+      }
 
-    if (!/(^[a-zA-Z\s]+$)|(^[a-zA-Z]\s[a-zA-Z]+$)/.test(sobrenome.value)) {
-      msg = '*Caracteres especiais não são permitidos no campo nome, passar bem.';
+    if (!/(^[a-zA-ZãÕÂÔ\s]+$)|(^[a-zA-ZãÕÂÔ]\s[a-zA-ZãÕÂÔ]+$)/.test(sobrenome.value)) {
+      msg = '* Caracteres especiais não são permitidos no campo sobrenome.';
       error(msg, sobrenome);
      return;
     }
@@ -94,12 +103,12 @@ function validaEmail(email: HTMLInputElement){
   let msg: string;
   if (email.nextElementSibling && email.nextElementSibling.classList.contains('error')) email.nextElementSibling.remove();
   if (email.value === '') {
-    msg = '*Campo E-mail precisa ser preenchido.'
+    msg = '* Campo E-mail precisa ser preenchido.'
     error(msg, email);
     return isValidEmail = false;
   }
   if(!/\S+@\S+\.\S+/.test(email.value)) {
-    msg = '*E-mail inválido!';
+    msg = '* E-mail inválido!';
     error(msg, email);
     return isValidEmail = false;
   }
