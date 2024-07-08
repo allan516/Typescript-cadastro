@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+main {
+  position: absolute;
+  top:20%;
+  min-width: 30vw;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: lightgrey;
+}
+
+main form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+main form label {
+ padding-top: 10px;
+}
+
+main form button {
+  width: 100px;
+  margin: 10px auto;
+}
+
+.error {
+  color: red;
+}
+
+.error > p {
+  border-radius: 3px;
+  padding: 5px;
+  background-color: rgba(255, 0, 0, 0.308);
+}
