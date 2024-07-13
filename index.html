@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faça seu registro</title>
   <link rel="stylesheet" href="style.css">
-
-  <title>TypeScript</title>
-
   <script src="//unpkg.com/systemjs@0.19.47/dist/system.js"></script>
 </head>
 
 <body>
-  <h1>Cadastro</h1>
-  <main>
-    <form action="#" method="get" id="form">
-      <label for="nome">Nome</label>
-      <input type="text" id="nome" placeholder=" Seu nome aqui">
-      <label for="sobrenome">Sobrenome</label>
-      <input type="text" id="sobrenome" placeholder=" Seu Sobrenome aqui">
-      <label for="email">E-mail</label>
-      <input type="email" id="email" placeholder=" Seu E-mail aqui">
-      <button id="button">Enviar</button>
+  <div class="container">
+    <form action="" id="form" class="form">
+      <h2>Faça seu cadastro</h2>
+      <div class="form-fields">
+        <label for="username">Seu usuário</label>
+        <input type="text" name="username" class="username" id="username" placeholder="Seu usuário">
+        <span class="error-message">Campo inválido por algum motivo qualquer</span>
+      </div>
+      <div class="form-fields">
+        <label for="email">Seu e-mail</label>
+        <input type="email" name="email" class="email" id="email" placeholder="Seu e-mail">
+        <span class="error-message">Campo inválido por algum motivo qualquer</span>
+      </div>
+      <div class="form-fields">
+        <label for="username">Sua senha</label>
+        <input type="password" name="password" class="password" id="password" placeholder="Sua senha">
+        <span class="error-message">Campo inválido por algum motivo qualquer</span>
+      </div>
+      <div class="form-fields">
+        <label for="username">Repetir senha</label>
+        <input type="password" name="password2" class="password2" id="password2" placeholder="Repetir senha">
+        <span class="error-message">Campo inválido por algum motivo qualquer</span>
+      </div>
+      <div class="form-fields">
+        <button type="submit">Enviar</button>
+      </div>
     </form>
-  </main>
+  </div>
+
   <script src="config.js"></script>
 </body>
+
 </html>
